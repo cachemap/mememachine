@@ -9,6 +9,8 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import LoginContainer from './LoginContainer.js'
+import { Container, Header, Content, Item, Input } from 'native-base';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -29,14 +31,18 @@ export default class App extends Component<Props> {
             </View>
           </View>
           <View style={styles.bottomContainer}>
-            <View style={styles.roundContainer}>
-              <Text style={styles.welcome}>[Login]</Text>
-            </View>
-            <View style={styles.roundContainer}>
-              <Text style={styles.welcome}>[Password]</Text>
-            </View>
-            <LoginContainer text={"Test Text"}>
-            </LoginContainer>
+            <Item rounded>
+              <Icon name="email" size={30} color="#900" solid/>
+              <Input placeholder='Email'/>
+            </Item>
+            <Item rounded>
+              <Icon name="email" size={30} color="#900" solid/>
+              <Input placeholder='Password'/>
+            </Item>
+            <Item rounded>
+              <Icon name="email" size={30} color="#900" solid/>
+              <Input placeholder='Sign In'/>
+            </Item>
           </View>
         </View>
       </View>
@@ -53,12 +59,12 @@ const styles = StyleSheet.create({
   },
   loginContainer: {
     flexDirection: "column",
-    width: "90%",
-    height: "90%",
+    width: "100%",
+    height: "100%",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "skyblue",
+    backgroundColor: "#88BBDD",
     borderWidth: 1,
     borderColor: "#999",
     borderRadius: 25,
